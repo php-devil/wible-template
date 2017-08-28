@@ -9,7 +9,7 @@
 namespace PhpDevil\Extensions\Wible\tags;
 
 
-class Form extends AbstractTag
+class FormTag extends AbstractTag
 {
     protected $action = '';
 

@@ -12,7 +12,13 @@ namespace PhpDevil\Extensions\Wible\tags;
 abstract class AbstractTag
 {
     abstract protected function getOpenTag();
-    abstract protected function getCloseTag();
+
+    protected $placeholder = null;
+
+    protected function getCloseTag()
+    {
+        return null;
+    }
 
 
     public function __set($name, $value)
@@ -34,6 +40,11 @@ abstract class AbstractTag
     final public static function open($options = [])
     {
         return new static($options);
+    }
+
+    public function __toString()
+    {
+        return (string) $this->close();
     }
 
     final public function close()

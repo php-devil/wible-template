@@ -8,10 +8,10 @@ $this->title = 'Форма';
 
 $this->beginBlock('content');
 
-$form = Form::open(['method' => 'get']);
-
-
-
+$form = \PhpDevil\Extensions\Wible\widgets\FormWidget::open();
+echo $form->field('username')->inputText(['placeholder' => 'Имя пользователя']);
+echo $form->field('password')->inputPassword(['placeholder' => 'Пароль']);
+echo $form->button('Войти', ['type'=>'submit']);
 $form->close();
 
 $this->endBlock();

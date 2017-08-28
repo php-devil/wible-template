@@ -10,6 +10,35 @@ use PhpDevil\Extensions\Wible\base\CView;
 class Wible
 {
     /**
+     * Загрузка модификатора данных
+     * @param $name
+     * @return null|string
+     */
+    private static function getModifier($name)
+    {
+        $class = 'PhpDevil\\Extensions\\Wible\\modifiers\\' . ucfirst($name) . 'Modifier';
+        if (class_exists($class)) {
+            return $class;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Модификация данных
+     * @param $value
+     * @param $modifier
+     * @param $param
+     * @return string|null
+     */
+    public static function modify($value, $modifier, $param)
+    {
+        if ($modifierClassName = self::getModifier($modifier)) {
+            return $modifierClassName::modify($value, $param);
+        }
+    }
+
+    /**
      * Отображение шаблона
      *
      * @param $templatePath

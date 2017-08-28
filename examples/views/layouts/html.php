@@ -18,13 +18,11 @@ $this->title = 'layouts/html.php';
     <p><?=__FILE__?></p>
         <footer>
         <hr/>
-        <?=$this->beginBlock('footer');?>
+        <?php $this->beginBlock('footer');?>
         <?=__FILE__?> footer
-        <?=$this->endBlock(); ?>
+        <?php $this->endBlock(); ?>
         </footer>
     <?php $this->endBlock();?>
-
-
 
     <?php $this->endBlock(); ?>
     </body>

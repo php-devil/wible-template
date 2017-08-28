@@ -5,4 +5,7 @@
 $this->extend(__DIR__ . '/layouts/body.php');
 $this->title = 'Index template title';
 ?>
-<h1>Index template</h1>
+
+<?=$this->beginBlock('footer');?>
+<?=__FILE__?> footer
+<?=$this->endBlock(); ?>

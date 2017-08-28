@@ -9,7 +9,7 @@
 namespace PhpDevil\Extensions\Wible\modifiers;
 
 
-class PhoneModifier
+class PhoneModifier extends AbstractModifier
 {
     public static function modify($number, $format)
     {
